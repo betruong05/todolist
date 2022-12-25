@@ -1,0 +1,53 @@
+version: '3'
+services:
+  todolist-nginx:
+    container_name: todolist-nginx
+    build: ./docker/nginx
+    command: nginx -g "daemon off;"
+    ports:
+      - "80:80"
+    volumes:
+      - ./:/var/www/html
+    depends_on:
+      - todolist-php
+    networks:
+      - todolist-network
+
+  todolist-php:
+    container_name: todolist-php
+    build: ./docker/php/
+    volumes:
+      - ./:/var/www/html
+    working_dir: /var/www/html
+    depends_on:
+      - todolist-db
+    networks:
+      - todolist-network
+
+  #MySQL Service
+  todolist-db:
+    image: mysql:5.7.22
+    container_name: todolist-db
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_DATABASE: todolist
+      MYSQL_ROOT_PASSWORD: password
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    volumes:
+      - dbdata:/var/lib/mysql/
+      - ./docker/mysql/my.cnf:/etc/mysql/my.cnf
+    networks:
+      - todolist-network
+
+#Docker Networks
+networks:
+  todolist-network:
+    driver: bridge
+#Volumes
+volumes:
+  dbdata:
+    driver: local
