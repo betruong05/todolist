@@ -1,0 +1,13 @@
+{
+    "require-dev": {
+        "components/bootstrap": "4.*",
+        "components/font-awesome": "4.*",
+        "components/jquery": "3.*",
+        "eternicode/bootstrap-datepicker": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src"
+        }
+    }
+}
