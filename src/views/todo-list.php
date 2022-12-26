@@ -117,16 +117,16 @@
                   </div>
                 </div>
                 <div class="table-cell">
-                  <div class="btn-group actions cell-edit-delete" role="group" aria-label="actions">
-                    <button title="edit" type="button" class="btn btn-info btn-work-edit">
+                  <div class="actions cell-edit-delete" role="group" aria-label="actions">
+                    <button title="edit" type="button" class="btn btn-info btn-work-edit mr-5">
                       <i class="fa fa-pencil" aria-hidden="true"></i>
                     </button>
                     <button data-href="index.php?action=deleteTask&id=<?php echo $task['id']; ?>" title="delete" type="button" class="btn btn-danger btn-work-delete">
                       <i class="fa fa-trash" aria-hidden="true"></i>
                     </button>
                   </div>
-                  <div class="btn-group actions cell-save-discard" role="group" aria-label="actions">
-                    <button title="discard" type="button" class="btn btn-warning btn-work-discard">
+                  <div class="actions cell-save-discard" role="group" aria-label="actions">
+                    <button title="discard" type="button" class="btn btn-warning btn-work-discard mr-5">
                       <i class="fa fa-repeat" aria-hidden="true"></i>
                     </button>
                     <button name="updateWork" value="update-work" title="save" type="submit" class="btn btn-success btn-work-update">

@@ -199,10 +199,10 @@ class TaskController
      * @param $name
      * @return array
      */
-    // public function getWorkByName($name)
-    // {
-    //     return $this->taskModel->getByName($name);
-    // }
+    public function getTaskByName($name)
+    {
+        return $this->taskModel->getByName($name);
+    }
 
     /**
      * Get a task by id - for unit test.

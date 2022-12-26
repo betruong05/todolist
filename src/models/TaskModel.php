@@ -73,18 +73,18 @@ class TaskModel extends Connection
         return mysqli_query($this->database, $sql_delete);
     }
 
-    // /**
-    //  * Get a task by name.
-    //  * 
-    //  * @param $name
-    //  * @return array|null
-    //  */
-    // public function getByName($name) {
-    //     $select_sql = "SELECT * FROM tasks WHERE `name`='$name' LIMIT 1";
-    //     $query      = mysqli_query($this->database, $select_sql);
+    /**
+     * Get a task by name.
+     *
+     * @param $name
+     * @return array|null
+     */
+    public function getByName($name) {
+        $select_sql = "SELECT * FROM tasks WHERE `name`='$name' LIMIT 1";
+        $query      = mysqli_query($this->database, $select_sql);
 
-    //     return mysqli_fetch_assoc($query);
-    // }
+        return mysqli_fetch_assoc($query);
+    }
 
     /**
      * Get a task by id.
